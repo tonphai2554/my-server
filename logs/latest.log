@@ -1,0 +1,154 @@
+[10:01:27] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3; Termux null) on Linux 6.12.30-android16-5-g1ed949324a3e-ab13881345-4k (aarch64)
+[10:01:27] [ServerMain/INFO]: [bootstrap] Loading Paper 26.1.2-63-main@711c5de (2026-05-11T08:20:02Z) for Minecraft 26.1.2
+[10:01:27] [ServerMain/WARN]: [oshi.software.os.linux.LinuxOperatingSystem] Did not find udev library in operating system. Some features may not work.
+[10:01:27] [ServerMain/ERROR]: [oshi.software.os.linux.LinuxOperatingSystem] Did not JNA classes. Investigate incompatible version or missing native dll.
+[10:01:27] [ServerMain/WARN]: Failed retrieving info for group processor
+java.lang.NoClassDefFoundError: Could not initialize class com.sun.jna.Native
+	at com.sun.jna.NativeLong.<clinit>(NativeLong.java:35) ~[jna-5.18.1.jar:5.18.1 (b0)]
+	at oshi.util.FileUtil.readNativeLongFromBuffer(FileUtil.java:253) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.driver.linux.proc.Auxv.queryAuxv(Auxv.java:48) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.software.os.linux.LinuxOperatingSystem.<clinit>(LinuxOperatingSystem.java:131) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.platform.linux.LinuxCentralProcessor.initProcessorCounts(LinuxCentralProcessor.java:174) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.common.AbstractCentralProcessor.<init>(AbstractCentralProcessor.java:68) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.platform.linux.LinuxCentralProcessor.<init>(LinuxCentralProcessor.java:59) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.platform.linux.LinuxHardwareAbstractionLayer.createProcessor(LinuxHardwareAbstractionLayer.java:43) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.util.Memoizer$1.get(Memoizer.java:65) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.common.AbstractHardwareAbstractionLayer.getProcessor(AbstractHardwareAbstractionLayer.java:48) ~[oshi-core-6.9.0.jar:6.9.0]
+	at net.minecraft.SystemReport.lambda$putHardware$0(SystemReport.java:101) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.ignoreErrors(SystemReport.java:109) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.putHardware(SystemReport.java:101) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.lambda$new$4(SystemReport.java:64) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.ignoreErrors(SystemReport.java:109) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.<init>(SystemReport.java:64) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.CrashReport.<init>(CrashReport.java:32) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.CrashReport.preload(CrashReport.java:222) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.server.Main.main(Main.java:102) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at io.papermc.paper.PaperBootstrap.boot(PaperBootstrap.java:21) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at org.bukkit.craftbukkit.Main.main(Main.java:204) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:42) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.UnsatisfiedLinkError: /data/data/com.termux/files/home/.cache/JNA/temp/jna4245931195431898276.tmp: dlopen failed: library "libc.so.6" not found: needed by /data/data/com.termux/files/home/.cache/JNA/temp/jna4245931195431898276.tmp in namespace (default) [in thread "ServerMain"]
+	at java.base/jdk.internal.loader.NativeLibraries.load(Native Method) ~[?:?]
+	at java.base/jdk.internal.loader.NativeLibraries$NativeLibraryImpl.open(NativeLibraries.java:321) ~[?:?]
+	at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:187) ~[?:?]
+	at java.base/jdk.internal.loader.NativeLibraries.loadLibrary(NativeLibraries.java:129) ~[?:?]
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2245) ~[?:?]
+	at java.base/java.lang.Runtime.load0(Runtime.java:767) ~[?:?]
+	at java.base/java.lang.System.load(System.java:1647) ~[?:?]
+	at com.sun.jna.Native.loadNativeDispatchLibraryFromClasspath(Native.java:1041) ~[jna-5.18.1.jar:5.18.1 (b0)]
+	at com.sun.jna.Native.loadNativeDispatchLibrary(Native.java:1011) ~[jna-5.18.1.jar:5.18.1 (b0)]
+	at com.sun.jna.Native.<clinit>(Native.java:221) ~[jna-5.18.1.jar:5.18.1 (b0)]
+	at com.sun.jna.platform.linux.Udev.<clinit>(Udev.java:37) ~[jna-platform-5.17.0.jar:5.17.0 (b0)]
+	at oshi.software.os.linux.LinuxOperatingSystem.<clinit>(LinuxOperatingSystem.java:93) ~[oshi-core-6.9.0.jar:6.9.0]
+	... 19 more
+[10:01:27] [ServerMain/WARN]: Failed retrieving info for group memory
+java.lang.NoClassDefFoundError: Could not initialize class oshi.software.os.linux.LinuxOperatingSystem
+	at oshi.hardware.platform.linux.LinuxGlobalMemory.<clinit>(LinuxGlobalMemory.java:28) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.platform.linux.LinuxHardwareAbstractionLayer.createMemory(LinuxHardwareAbstractionLayer.java:38) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.util.Memoizer$1.get(Memoizer.java:65) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.common.AbstractHardwareAbstractionLayer.getMemory(AbstractHardwareAbstractionLayer.java:60) ~[oshi-core-6.9.0.jar:6.9.0]
+	at net.minecraft.SystemReport.lambda$putHardware$2(SystemReport.java:103) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.ignoreErrors(SystemReport.java:109) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.putHardware(SystemReport.java:103) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.lambda$new$4(SystemReport.java:64) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.ignoreErrors(SystemReport.java:109) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.<init>(SystemReport.java:64) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.CrashReport.<init>(CrashReport.java:32) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.CrashReport.preload(CrashReport.java:222) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.server.Main.main(Main.java:102) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at io.papermc.paper.PaperBootstrap.boot(PaperBootstrap.java:21) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at org.bukkit.craftbukkit.Main.main(Main.java:204) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:42) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
+Caused by: java.lang.ExceptionInInitializerError: Exception java.lang.NoClassDefFoundError: Could not initialize class com.sun.jna.Native [in thread "ServerMain"]
+	at com.sun.jna.NativeLong.<clinit>(NativeLong.java:35) ~[jna-5.18.1.jar:5.18.1 (b0)]
+	at oshi.util.FileUtil.readNativeLongFromBuffer(FileUtil.java:253) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.driver.linux.proc.Auxv.queryAuxv(Auxv.java:48) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.software.os.linux.LinuxOperatingSystem.<clinit>(LinuxOperatingSystem.java:131) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.platform.linux.LinuxCentralProcessor.initProcessorCounts(LinuxCentralProcessor.java:174) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.common.AbstractCentralProcessor.<init>(AbstractCentralProcessor.java:68) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.platform.linux.LinuxCentralProcessor.<init>(LinuxCentralProcessor.java:59) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.platform.linux.LinuxHardwareAbstractionLayer.createProcessor(LinuxHardwareAbstractionLayer.java:43) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.util.Memoizer$1.get(Memoizer.java:65) ~[oshi-core-6.9.0.jar:6.9.0]
+	at oshi.hardware.common.AbstractHardwareAbstractionLayer.getProcessor(AbstractHardwareAbstractionLayer.java:48) ~[oshi-core-6.9.0.jar:6.9.0]
+	at net.minecraft.SystemReport.lambda$putHardware$0(SystemReport.java:101) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.ignoreErrors(SystemReport.java:109) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	at net.minecraft.SystemReport.putHardware(SystemReport.java:101) ~[paper-26.1.2.jar:26.1.2-63-711c5de]
+	... 10 more
+[10:01:27] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[10:01:28] [ServerMain/INFO]: [PluginInitializerManager] Initialized 0 plugins
+[10:01:46] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[10:01:56] [ServerMain/INFO]: Loaded 1515 recipes
+[10:01:56] [ServerMain/INFO]: Loaded 1617 advancements
+[10:01:56] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[10:01:57] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 1,356.6ms
+[10:01:58] [Server thread/INFO]: Starting minecraft server version 26.1.2
+[10:01:58] [Server thread/INFO]: Loading properties
+[10:01:58] [Server thread/INFO]: This server is running Paper version 26.1.2-63-main@711c5de (2026-05-11T08:20:02Z) (Implementing API version 26.1.2.build.63-stable)
+[10:01:58] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[10:01:58] [Server thread/INFO]: Using 4 threads for Netty based IO
+[10:01:58] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[10:01:59] [Server thread/INFO]: [MoonriseCommon] Paper is using 2 worker threads, 1 I/O threads
+[10:02:00] [Server thread/INFO]: Default game type: SURVIVAL
+[10:02:00] [Server thread/INFO]: Generating keypair
+[10:02:00] [Server thread/INFO]: Starting Minecraft server on *:25565
+[10:02:00] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[10:02:00] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[10:02:00] [Server thread/WARN]: [io.netty.util.internal.MacAddressUtil] Failed to find a usable hardware address from the network interfaces; using random bytes: f4:c3:8b:13:17:6b:1b:58
+[10:02:00] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[10:02:00] [Server thread/INFO]: Preparing level "world"
+[10:02:02] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[10:02:02] [Server thread/INFO]: Preparing spawn area: 100%
+[10:02:02] [Server thread/INFO]: Prepared spawn area in 6 ms
+[10:02:02] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[10:02:02] [Server thread/INFO]: Preparing spawn area: 100%
+[10:02:02] [Server thread/INFO]: Prepared spawn area in 2 ms
+[10:02:02] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
+[10:02:02] [Server thread/INFO]: Preparing spawn area: 100%
+[10:02:02] [Server thread/INFO]: Prepared spawn area in 3 ms
+[10:02:02] [Server thread/INFO]: Done preparing level "world" (1.449s)
+[10:02:02] [Server thread/INFO]: [spark] Starting background profiler...
+[10:02:02] [Server thread/WARN]: [spark] Unable to initialise the async-profiler engine: A runtime error occurred whilst loading the native library (/data/data/com.termux/files/home/server/plugins/spark/tmp/spark-48bf80d95e1b-libasyncProfiler.so.tmp: dlopen failed: library "libdl.so.2" not found: needed by /data/data/com.termux/files/home/server/plugins/spark/tmp/spark-48bf80d95e1b-libasyncProfiler.so.tmp in namespace (default))
+[10:02:02] [Server thread/WARN]: [spark] Please see here for more information: https://spark.lucko.me/docs/misc/Using-async-profiler
+[10:02:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[10:02:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[10:02:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[10:02:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[10:02:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[10:02:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[10:02:03] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[10:02:03] [Server thread/INFO]: Running delayed init tasks
+[10:02:03] [Server thread/INFO]: Done (38.428s)! For help, type "help"
+[10:02:07] [Server thread/INFO]: Stopping the server
+[10:02:07] [Server thread/INFO]: Stopping server
+[10:02:07] [Server thread/INFO]: Saving players
+[10:02:07] [Server thread/INFO]: Saving worlds
+[10:02:07] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 0.00s
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
+[10:02:07] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0.00s
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
+[10:02:07] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_end'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_end'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_end'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_end' in 0.00s
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_end'
+[10:02:07] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_end'
+[10:02:07] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[10:02:07] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[10:02:07] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[10:02:07] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[10:02:07] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
+[10:02:07] [Server thread/INFO]: All RegionFile I/O tasks to complete
+[10:02:07] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
+[10:02:07] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
